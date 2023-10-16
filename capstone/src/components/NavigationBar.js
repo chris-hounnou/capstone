@@ -1,17 +1,29 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavigationBar () {
 
+    const routes = [
+        {to: "/", text: "Home"},
+        {to: "/Characters", text: "Characters"},
+        {to: "/Character", text: "Character"},
+        {to: "/Houses", text: "Houses"}
+      ]; 
+
     return (
         <nav>
-            <ul>
-                <li> 
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
+        {routes.map((route, index) => 
+          <NavLink
+      key={index}
+      activeClassName="navigation_item--active"
+      className="navigation_item"
+      to={route.to}
+    >
+      {route.text}
+    </NavLink>
+          )}
         </nav>
-    )
+      );
 
 }
 

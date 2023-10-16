@@ -1,17 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import styles from "./App.css"
 import NavigationBar from './components/NavigationBar';
-import Home from './pages/Home';
-
+import AppRoute from './routes/AppRoute';
 
 function App() {
   return (
-<Router>
-  <NavigationBar/>{}
-  <Routes>
-  <Route path='/' exactcomponent={Home}/>
-  </Routes>
-</Router>
+<BrowserRouter>
+    <div className={styles["app"]}>
+          <header className={styles["app__header"]}>
+            <NavigationBar/>
+          </header>
+
+          <main className={styles["app__main"]}>
+            <AppRoute/>
+          </main>
+
+          <footer className={styles["app__footer"]}>
+            
+          </footer>
+        </div>
+        </BrowserRouter>
+      
     );
 }
 
