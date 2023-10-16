@@ -9,22 +9,21 @@ function AppRoute ()
 {
   return (
     <Routes> 
-      <Route 
-      path="/"
+      <Route path="Home"
       element={<Home/>}
       />
       
       <Route 
-      path="/"
+      path="Characters"
       element={<Characters/>}
       />
 
     <Route 
-      path="/"
+      path="Character"
       element={<Character/>}
       />
       <Route 
-      path="/"
+      path="Houses"
       element={<Houses/>}
       />
     
@@ -32,7 +31,7 @@ function AppRoute ()
 
     <Route 
       path="*"
-      element={<Navigate to ={"/"}/>}
+      element={<Navigate to ={"Home"}/>}
       />
     </Routes>
   );
