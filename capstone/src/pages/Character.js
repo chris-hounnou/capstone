@@ -21,7 +21,7 @@ function Character() {
 
   return (
     <div>
-      <h2>{character.name}</h2>
+      <h2>Name: {character.name}</h2>
       <p>Culture: {character.culture}</p>
       <p>Gender: {character.gender}</p>
       {/* Add more details as needed */}
