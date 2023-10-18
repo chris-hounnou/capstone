@@ -12,10 +12,10 @@ class OfIceAndFireApi {
 
     return {
       data: response.data,
-      paginationLinks: (response.headers.link),
+      // paginationLinks: (response.headers.get('Link')),
     };
   } catch (error) {
-    throw new Error("Failed to fetch characters");
+    console.error("DEBUG ", error.message)
   }
 }
 }
