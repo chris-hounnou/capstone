@@ -15,7 +15,7 @@ function NavigationBar () {
         {routes.map((route, index) => 
           <NavLink
       key={index}
-      activeClassName="navigation_item--active"
+      activeclassname="navigation_item--active"
       className="navigation_item"
       to={route.to}
     >

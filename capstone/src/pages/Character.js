@@ -9,14 +9,14 @@ function Character() {
   useEffect(() => {
     async function fetchCharacter() {
       try {
-        const characterData = await OfIceAndFireApi.fetchCharacterById(id);
+        const characterData = await OfIceAndFireApi.fetchCharacterById(1);
         setCharacter(characterData);
       } catch (error) {
         console.error("Error fetching character:", error);
       }
     }
 
-    fetchCharacter();
+    fetchCharacter(1);
   }, [id]);
 
   return (
