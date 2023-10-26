@@ -12,38 +12,33 @@ function Characters() {
     name: "",
     gender: "",
     culture: "",
-    // Add more filters as needed
   };
-  const maxRetries = 3; // Define the maximum number of retries
-  const [retryCount, setRetryCount] = useState(0); // Track the number of retries
+  const maxRetries = 3; 
+  const [retryCount, setRetryCount] = useState(0); 
 
-  // Function to fetch characters with retry
   const fetchCharactersWithRetry = async () => {
     try {
       setIsLoading(true);
-      // Assuming that OfIceAndFireApi.fetchCharacters is used correctly.
       const response = await OfIceAndFireApi.fetchCharacters(page, pageSize, filters);
 
       if (response.data) {
         setCharacters(response.data);
-        // Uncomment and use the following line to set total pages based on API response
         setTotalPages(Math.ceil(response.headers['x-total-count'] / pageSize));
       } else {
         console.error("Empty response from the API.");
         console.log(response);
       }
       setIsLoading(false);
-      setRetryCount(0); // Reset retry count on success
+      setRetryCount(0); 
     } catch (error) {
       console.error("Error fetching characters:", error);
 
       if (retryCount < maxRetries) {
         console.log(`Retrying (${retryCount + 1} of ${maxRetries})...`);
-        // Retry with an increased retryCount after a short delay (rate limiting).
         setTimeout(() => {
           setRetryCount(retryCount + 1);
           fetchCharactersWithRetry();
-        }, 1000); // Adjust the delay as needed
+        }, 1000); 
       } else {
         console.error("Max retries reached. Unable to fetch characters.");
         setIsLoading(false);
@@ -51,27 +46,23 @@ function Characters() {
     }
   };
 
-  // Handle changing the page
   const handlePageChange = (newPage) => {
     setPage(newPage);
   };
 
-  // Handle changing the page size
   const handlePageSizeChange = (newSize) => {
     setPageSize(newSize);
   };
 
-  // Apply filters and pagination when page or pageSize change
   useEffect(() => {
     if (retryCount === 0) {
-      fetchCharactersWithRetry(); // Start with retryCount set to 0
+      fetchCharactersWithRetry(); 
     }
   }, [page, pageSize, filters, retryCount]);
 
   return (
     <div>
       <h2>Characters</h2>
-      {/* Pagination controls */}
       <div>
         <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
           Previous
@@ -81,7 +72,6 @@ function Characters() {
           Next
         </button>
       </div>
-      {/* Page size controls */}
       <div>
         Page Size:
         <select onChange={(e) => handlePageSizeChange(Number(e.target.value))} value={pageSize}>

@@ -24,20 +24,19 @@ class OfIceAndFireApi {
       if (response.status === 200){
 
        
-       return response.data; // Return the response data
+       return response.data; 
       }else{
         throw new Error(`API Request failed with status:${response.status}`);
       }
       } catch (error) {
       console.error("Error fetching characters:", error.message);
-      throw error; // Re-throw the error so it can be caught in the Characters component
+      throw error; 
     }
   }
 
 
 
 
-  // Add similar functions for fetching books, houses, and specific resources
 static async fetchCharacter(page = 1, pageSize = 10)  {
   try {
     const response = axios.get(`${apiBaseUrl}/characters`, {
@@ -46,7 +45,7 @@ static async fetchCharacter(page = 1, pageSize = 10)  {
 
     return {
       data: response.data,
-      // paginationLinks: (response.headers.get('Link')),
+      paginationLinks: (response.headers.get('Link')),
     };
   } catch (error) {
     console.error("DEBUG ", error.message)
