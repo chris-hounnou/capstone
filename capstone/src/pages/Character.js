@@ -1,30 +1,54 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import OfIceAndFireApi from "../services/OfIceAndFireApi";
+import React, { useState, useEffect } from 'react';
+import OfIceAndFireApi from '../services/OfIceAndFireApi';
 
-function Character() {
-  const [character, setCharacter] = useState({});
-  const { id } = useParams();
+function Character({ match }) {
+  const [character, setCharacter] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchCharacter() {
+    const characterId = match.params.id;
+
+    const fetchCharacter = async () => {
       try {
-        const characterData = await OfIceAndFireApi.fetchCharacterById(1);
-        setCharacter(characterData);
+        setIsLoading(true);
+        const response = await OfIceAndFireApi.fetchCharacterById(characterId);
+
+        setCharacter(response.data);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching character:", error);
       }
+    };
+
+    fetchCharacter();
+  }, [match.params.id]);
+
+  const renderCharacterDetails = () => {
+    if (isLoading) {
+      return <p>Loading character details...</p>;
     }
 
-    fetchCharacter(1);
-  }, [id]);
+    if (character) {
+      return (
+        <div>
+          <h2>{character.name}</h2>
+          <p>Gender: {character.gender}</p>
+          <p>Culture: {character.culture}</p>
+          <p>Born: {character.born}</p>
+          <p>Died: {character.died}</p>
+          <p>Titles: {character.titles.join(', ')}</p>
+          {/* Add more character details here */}
+        </div>
+      );
+    } else {
+      return <p>Character not found.</p>;
+    }
+  };
 
   return (
     <div>
-      <h2>Name: {character.name}</h2>
-      <p>Culture: {character.culture}</p>
-      <p>Gender: {character.gender}</p>
-      {/* Add more details as needed */}
+      <h2>Character Details</h2>
+      {renderCharacterDetails()}
     </div>
   );
 }
