@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createRoutesFromElements } from 'react-router-dom';
 import OfIceAndFireApi from '../services/OfIceAndFireApi';
 
 function Houses() {
@@ -7,6 +8,7 @@ function Houses() {
   const [pageSize, setPageSize] = useState(10);
   const [isLoading, setIsLoading] = useState(true);
   const [paginationInfo, setPaginationInfo] = useState({});
+
 
   const fetchHousesWithPagination = async (page, pageSize) => {
     try {
@@ -22,13 +24,13 @@ function Houses() {
   }
 
   const handleNextPage = () => {
-    if (paginationInfo.next) {
+     {
       setPage(page + 1);
     }
   }
 
   const handlePreviousPage = () => {
-    if (paginationInfo.prev) {
+    {
       setPage(page - 1);
     }
   }
@@ -40,11 +42,15 @@ function Houses() {
   const renderPaginationControls = () => {
     return (
       <div>
-        <button onClick={handlePreviousPage} disabled={!paginationInfo.prev}>
+        {/* <button onClick={handlePreviousPage} disabled={!paginationInfo.prev}> */}
+        <button onClick={handlePreviousPage} >
+
           Previous
         </button>
         <span>Page {page}</span>
-        <button onClick={handleNextPage} disabled={!paginationInfo.next}>
+        {/* <button onClick={handleNextPage} disabled={!paginationInfo.next}> */}
+        <button onClick={handleNextPage} >
+
           Next
         </button>
       </div>
@@ -60,7 +66,10 @@ function Houses() {
           {houses.map((house) => (
             <li key={house.url}>
               {house.name}
-              {house.region}{house.words}
+              {house.region}
+              {house.words}
+              {house.currentLord}
+              {house.swornMembers}
             </li>
           ))}
         </ul>

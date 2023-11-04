@@ -16,6 +16,8 @@ function Characters() {
 
       setCharacters(data);
       setPaginationInfo(paginationInfo);
+
+      console.log(paginationInfo)
       setIsLoading(false);
     } catch (error) {
       console.error("Error fetching characters:", error);
@@ -23,13 +25,13 @@ function Characters() {
   }
 
   const handleNextPage = () => {
-    if (paginationInfo.next) {
+     {
       setPage(page + 1);
     }
   }
 
   const handlePreviousPage = () => {
-    if (paginationInfo.prev) {
+     {
       setPage(page - 1);
     }
   }
@@ -39,13 +41,20 @@ function Characters() {
   }, [page, pageSize]);
 
   const renderPaginationControls = () => {
+    if (!paginationInfo) {
+      return <div>Loading...</div>;;
+    }
     return (
       <div>
-        <button onClick={handlePreviousPage} disabled={!paginationInfo.prev}>
+        {/* <button onClick={handlePreviousPage} disabled={!paginationInfo.prev}> */}
+        <button onClick={handlePreviousPage}>
+
           Previous
         </button>
         <span>Page {page}</span>
-        <button onClick={handleNextPage} disabled={!paginationInfo.next}>
+        {/* <button onClick={handleNextPage} disabled={!paginationInfo.next}> */}
+        <button onClick={handleNextPage}  >
+
           Next
         </button>
       </div>

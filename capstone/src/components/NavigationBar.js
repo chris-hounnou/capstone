@@ -1,11 +1,13 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
+import styles from "./NavigationBar.module.css";
+
 function NavigationBar () {
 
     const routes = [
         {to: "/", text: "Home"},
         {to: "/Characters", text: "Characters"},
-        {to: "/Character", text: "Character"},
+        // {to: "/Character", text: "Character"},
         {to: "/Houses", text: "Houses"}
       ]; 
 

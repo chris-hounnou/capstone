@@ -19,7 +19,7 @@ function AppRoute ()
       />
 
     <Route 
-      path="Character"
+      path="Characters/:id"
       element={<Character/>}
       />
       <Route 
