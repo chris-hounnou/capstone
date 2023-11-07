@@ -36,6 +36,12 @@ function Characters() {
     }
   }
 
+  const handlePageSizeChange = (newSize) => {
+    setPageSize(newSize);
+    setPage(1); // Reset to the first page when changing page size
+  };
+
+
   useEffect(() => {
     fetchCharactersWithPagination(page, pageSize);
   }, [page, pageSize]);
@@ -85,6 +91,16 @@ function Characters() {
   return (
     <div>
       <h2>Characters</h2>
+      <div>
+        <label>
+          Page Size:
+          <select value={pageSize} onChange={(e) => handlePageSizeChange(parseInt(e.target.value, 10))}>
+            <option value={10}>10</option>
+            <option value={20}>20</option>
+            <option value={50}>50</option>
+          </select>
+        </label>
+      </div>
       {renderPaginationControls()}
       {renderCharacterList()}
     </div>
