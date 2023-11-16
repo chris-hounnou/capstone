@@ -1,0 +1,41 @@
+.housesContainer{
+    max-width: 800px;
+    margin: 0px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2px 16px;
+    text-decoration: none;
+   /* background-color: rgb(215, 188, 147); */
+
+   border-radius: 15px;
+  padding: 20px;
+}
+
+.housesContainer:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border: #000;
+
+}
+
+.buttons{
+
+position:fixed;
+bottom: 0;
+
+
+
+}
+
+
+.buttons:hover{
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    /* background-color: black; */
+    cursor: pointer;
+}
+
+.dropDown{
+
+    color: #000;
+
+}

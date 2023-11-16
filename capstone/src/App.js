@@ -3,12 +3,17 @@ import { BrowserRouter, Routes} from 'react-router-dom';
 import styles from "./App.css"
 import NavigationBar from './components/NavigationBar';
 import AppRoute from './routes/AppRoute';
+import backgroundImage from './services/backgroundImage.jpg';
 
 function App() {
+  const backgroundStyle = {
+    backgroundImage: `url(${backgroundImage})`
+  };
+
   return (
 <BrowserRouter>
 
-    <div className={styles["app"]}>
+    <div className={styles["app"]} style={backgroundStyle}>
           <header className={styles["app__header"]}>
             <NavigationBar/>
           </header>

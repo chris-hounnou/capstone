@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import OfIceAndFireApi from '../services/OfIceAndFireApi';
-
+import styles from './Houses.module.css'
 function Houses() {
   const [houses, setHouses] = useState([]);
   const [page, setPage] = useState(1);
@@ -43,7 +43,7 @@ function Houses() {
 
   const renderPaginationControls = () => {
     return (
-      <div>
+      <div className={styles.buttons}>
         {/* <button onClick={handlePreviousPage} disabled={page === 1}> */}
         <button onClick={handlePreviousPage} >
 
@@ -67,11 +67,11 @@ function Houses() {
         <ul>
           {houses.map((house) => (
             <li key={house.url}>
-              <div>
+              <div className={styles.housesContainer}>
                 <h3>{house.name}</h3>
                 <p>Region: {house.region}</p>
                 <p>Words: {house.words}</p>
-                <p>Current Lord: {house.currentLord || 'N/A'}</p>
+                <p>Current Lord: {house.currentLord || 'None'}</p>
                 <p>
                   Sworn Members: {house.swornMembers.length > 0 ? house.swornMembers.join(', ') : 'N/A'}
                 </p>
@@ -88,7 +88,7 @@ function Houses() {
   return (
     <div>
       <h2>Houses</h2>
-      <label>
+      <label className={styles.dropDown}>
           Page Size:
           <select value={pageSize} onChange={(e) => handlePageSizeChange(parseInt(e.target.value, 10))}>
             <option value={10}>10</option>

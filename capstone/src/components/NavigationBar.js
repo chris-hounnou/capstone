@@ -12,12 +12,11 @@ function NavigationBar () {
       ]; 
 
     return (
-        <nav>
+        <nav className={styles.navigationBar}>
         {routes.map((route, index) => 
-          <NavLink
+          <NavLink className={styles.navLink}
       key={index}
-      activeclassname="navigation_item--active"
-      className="navigation_item"
+      activeclassname={styles.active}
       to={route.to}
     >
       {route.text}

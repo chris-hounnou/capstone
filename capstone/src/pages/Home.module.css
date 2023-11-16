@@ -1,0 +1,28 @@
+.Home {
+    border: solid rgb(249, 248, 251);
+
+    background-color: rgb(234, 233, 236);
+
+    padding: 20px;
+
+    text-align: center;
+    border-radius: 20px;
+    /* Home.module.css */
+
+    /* Other styles for the Home component */
+    /* Set the background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+  
+}
+
+
+.title{
+
+    position: relative;
+    height: auto;
+    color: rgb(250, 243, 247);
+}
+

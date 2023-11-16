@@ -6,7 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: rgb(120, 133, 129);
+  background-color: rgb(235, 235, 249);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
 
 }
 

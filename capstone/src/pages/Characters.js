@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import OfIceAndFireApi from '../services/OfIceAndFireApi';
-
+import styles from './Characters.module.css'
 function Characters() {
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState(1);
@@ -38,7 +38,7 @@ function Characters() {
 
   const handlePageSizeChange = (newSize) => {
     setPageSize(newSize);
-    setPage(1); // Reset to the first page when changing page size
+    setPage(1); 
   };
 
 
@@ -75,7 +75,7 @@ function Characters() {
       return (
         <ul>
           {characters.map((character) => (
-            <li key={character.url}>
+            <li className={styles.characterContainer} key={character.url}>
               <Link to={`/characters/${character.url.split('/').pop()}`}>
                 Name: {character.name} | Gender: {character.gender} | Culture: {character.culture}
               </Link>

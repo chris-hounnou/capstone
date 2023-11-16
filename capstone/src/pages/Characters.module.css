@@ -1,0 +1,20 @@
+.characterContainer{
+    max-width: 500px;
+    margin: 0px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2px 16px;
+    text-decoration: none;
+    border-radius: 15px;
+
+}
+
+
+
+
+.characterContainer:hover{
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
