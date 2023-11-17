@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes} from 'react-router-dom';
-import styles from "./App.css"
+import styles from "./App.module.css"
 import NavigationBar from './components/NavigationBar';
 import AppRoute from './routes/AppRoute';
 import backgroundImage from './services/backgroundImage.jpg';

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import OfIceAndFireApi from '../services/OfIceAndFireApi';
 import styles from './Houses.module.css'
+import axios from 'axios';
 function Houses() {
   const [houses, setHouses] = useState([]);
   const [page, setPage] = useState(1);
@@ -13,7 +14,26 @@ function Houses() {
     try {
       setIsLoading(true);
       const { data, paginationInfo } = await OfIceAndFireApi.fetchWithPagination('houses', page, pageSize);
+      const updatedHouses = await Promise.all(
+        data.map(async (house) => {
+          if (house.currentLord) {
+            const currentLordResponse = await axios.get(house.currentLord);
+            house.currentLord = currentLordResponse.data.name;
+          }
 
+          if (house.swornMembers.length > 0) {
+            const swornMembersResponses = await Promise.all(
+              house.swornMembers.map(async (memberUrl) => {
+                const memberResponse = await axios.get(memberUrl);
+                return memberResponse.data.name;
+              })
+            );
+            house.swornMembers = swornMembersResponses;
+          }
+
+          return house;
+        })
+      );
       setHouses(data);
       setPaginationInfo(paginationInfo);
       setIsLoading(false);
@@ -103,4 +123,3 @@ function Houses() {
 }
 
 export default Houses;
-

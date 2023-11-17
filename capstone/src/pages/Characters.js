@@ -53,13 +53,13 @@ function Characters() {
     return (
       <div>
         {/* <button onClick={handlePreviousPage} disabled={!paginationInfo.prev}> */}
-        <button onClick={handlePreviousPage}>
+        <button onClick={handlePreviousPage} className={styles.previous}>
 
           Previous
         </button>
         <span>Page {page}</span>
         {/* <button onClick={handleNextPage} disabled={!paginationInfo.next}> */}
-        <button onClick={handleNextPage}  >
+        <button onClick={handleNextPage}  className={styles.next}>
 
           Next
         </button>

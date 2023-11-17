@@ -7,14 +7,7 @@
 
     text-align: center;
     border-radius: 20px;
-    /* Home.module.css */
-
-    /* Other styles for the Home component */
-    /* Set the background image */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  
+    
   
 }
 
@@ -23,6 +16,6 @@
 
     position: relative;
     height: auto;
-    color: rgb(250, 243, 247);
+    color: rgb(17, 13, 15);
 }
 

@@ -1,14 +1,11 @@
 .housesContainer{
     max-width: 800px;
-    margin: 0px;
+    margin: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    padding: 2px 16px;
     text-decoration: none;
-   /* background-color: rgb(215, 188, 147); */
-
+   background-color: rgb(158, 144, 119);
    border-radius: 15px;
-  padding: 20px;
 }
 
 .housesContainer:hover{
@@ -19,19 +16,20 @@
 
 .buttons{
 
-position:fixed;
-bottom: 0;
 
-
-
+display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+padding: 20px;
+border-radius: 15px;
 }
 
 
 .buttons:hover{
 
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    /* background-color: black; */
     cursor: pointer;
+    
 }
 
 .dropDown{

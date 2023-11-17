@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom/client';
 import styles from './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import backgroundImage from './services/backgroundImage.jpg'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const backgroundStyle = {
-  backgroundImage: `url(${backgroundImage})`
-};
+
 root.render(
-  <React.StrictMode classname={styles.App} style={backgroundStyle}>
+  <React.StrictMode classname={styles.App}>
     <App />
   </React.StrictMode>
 );

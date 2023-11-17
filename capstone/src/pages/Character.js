@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import OfIceAndFireApi from '../services/OfIceAndFireApi';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
+import styles from './Character.module.css'
 function Character() {
   const [character, setCharacter] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -61,7 +61,7 @@ function Character() {
 
     if (character) {
       return (
-        <div>
+        <div className={styles.container}>
           <h2>{character.name}</h2>
           <p>Gender: {character.gender}</p>
           <p>Culture: {character.culture}</p>
