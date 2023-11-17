@@ -1,5 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
+jest.mock('axios', () => ({
+  get: jest.fn(() => Promise.resolve({ data: {} })),
+}));
 const apiBaseUrl = "https://www.anapioficeandfire.com/api";
 
 class OfIceAndFireApi {

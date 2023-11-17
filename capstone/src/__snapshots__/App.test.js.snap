@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="app"
+    style="background-image: url(backgroundImage.jpg);"
+  >
+    <header
+      class="app__header"
+    >
+      <nav
+        class="navigationBar"
+      >
+        <a
+          activeclassname="active"
+          class="navLink"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          activeclassname="active"
+          class="navLink"
+          href="/Characters"
+        >
+          Characters
+        </a>
+        <a
+          activeclassname="active"
+          class="navLink"
+          href="/Houses"
+        >
+          Houses
+        </a>
+      </nav>
+    </header>
+    <main
+      class="app__main"
+    >
+      <div
+        class="Home"
+      >
+        <h1
+          class="title"
+        >
+          Welcome To The Land of Ice and Fire!
+        </h1>
+        <p>
+          This is the Home page to the Game of Thrones App! navigate to other characters and lands in the features above.
+        </p>
+      </div>
+    </main>
+    <footer
+      class="app__footer"
+    />
+  </div>
+</DocumentFragment>
+`;

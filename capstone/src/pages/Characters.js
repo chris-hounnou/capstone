@@ -51,7 +51,7 @@ function Characters() {
       return <div>Loading...</div>;;
     }
     return (
-      <div>
+      <div className={styles.buttons}>
         {/* <button onClick={handlePreviousPage} disabled={!paginationInfo.prev}> */}
         <button onClick={handlePreviousPage} className={styles.previous}>
 
