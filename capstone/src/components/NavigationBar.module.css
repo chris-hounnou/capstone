@@ -1,26 +1,24 @@
-.navigationBar{
-    
+.navigationBar {
     display: flex;
     padding: 20;
     font-size: 30px;
-   background-color: rgb(249, 251, 252);
-   align-items: center;
-   box-shadow: 0 2px 2px 2px rgba(red, green, blue, alpha);
-border-radius: 15px;
+    background-color: rgb(249, 251, 252);
+    align-items: center;
+    box-shadow: 0 2px 2px 2px rgba(red, green, blue, alpha);
+    border-radius: 15px;
 }
 
 
-.navLink{
+.navLink {
     display: flex;
     color: rgb(28, 21, 21);
     padding: 10px;
     text-decoration-line: none;
-    
+
 }
 
-.navLink:hover{
+.navLink:hover {
     box-shadow: 5px 5px 11px rgb(34, 26, 31);
     border-radius: 15px;
     cursor: pointer;
-
 }
